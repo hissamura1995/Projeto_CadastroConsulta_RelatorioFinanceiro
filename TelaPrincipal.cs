@@ -1,98 +1,133 @@
-﻿using System;
+﻿using Projeto_CadastroConsulta_RelatorioFinanceiro.Business.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace Projeto_CadastroConsulta_RelatorioFinanceiro
 {
     public partial class TelaPrincipal : Form
     {
-        private TextBox txtLoginUsuario;
-        private Label lblSenhaUsuario;
-        private TextBox txtSenhaUsuario;
-        private Button btnEntrar;
-        private Label lblLogin;
+
+        #region ... Propriedades ...
+
+        /// <summary>
+        /// Evento de quando o mouse esta sobre o evento e é pressionado
+        /// Permite que o form seja arrastado mesmo sem a borda padrão do windows
+        /// Referência: https://social.msdn.microsoft.com/Forums/pt-BR/5465b4bc-5433-45ae-9689-4fdc30d2ba8b/como-arrastar-uma-form-sem-bordas?forum=vsvbasicpt 
+        /// </summary>
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+
+        /// <summary>
+        /// Armazena os dados do usuario logado
+        /// </summary>
+        public UsuarioModel UsuarioLogado;
+
+        #endregion ... Propriedades ...
+
+
+        #region ... Métodos Privados ...
+
+
+        #endregion ... Métodos Privados ...
+
+
+        #region ... Eventos ...
 
         public TelaPrincipal()
         {
             InitializeComponent();
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
         }
 
-        private void InitializeComponent()
+        /// <summary>
+        /// Evento load da tela principal
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        public void TelaPrincipal_Load(object sender, EventArgs e)
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipal));
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.txtLoginUsuario = new System.Windows.Forms.TextBox();
-            this.lblSenhaUsuario = new System.Windows.Forms.Label();
-            this.txtSenhaUsuario = new System.Windows.Forms.TextBox();
-            this.btnEntrar = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(187, 60);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(33, 13);
-            this.lblLogin.TabIndex = 0;
-            this.lblLogin.Text = "Login";
-            this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtLoginUsuario
-            // 
-            this.txtLoginUsuario.Location = new System.Drawing.Point(128, 76);
-            this.txtLoginUsuario.Name = "txtLoginUsuario";
-            this.txtLoginUsuario.Size = new System.Drawing.Size(150, 20);
-            this.txtLoginUsuario.TabIndex = 1;
-            // 
-            // lblSenhaUsuario
-            // 
-            this.lblSenhaUsuario.AutoSize = true;
-            this.lblSenhaUsuario.Location = new System.Drawing.Point(187, 99);
-            this.lblSenhaUsuario.Name = "lblSenhaUsuario";
-            this.lblSenhaUsuario.Size = new System.Drawing.Size(38, 13);
-            this.lblSenhaUsuario.TabIndex = 2;
-            this.lblSenhaUsuario.Text = "Senha";
-            this.lblSenhaUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtSenhaUsuario
-            // 
-            this.txtSenhaUsuario.Location = new System.Drawing.Point(128, 115);
-            this.txtSenhaUsuario.Name = "txtSenhaUsuario";
-            this.txtSenhaUsuario.Size = new System.Drawing.Size(150, 20);
-            this.txtSenhaUsuario.TabIndex = 3;
-            // 
-            // btnEntrar
-            // 
-            this.btnEntrar.Location = new System.Drawing.Point(168, 141);
-            this.btnEntrar.Name = "btnEntrar";
-            this.btnEntrar.Size = new System.Drawing.Size(75, 23);
-            this.btnEntrar.TabIndex = 4;
-            this.btnEntrar.Text = "Entrar";
-            this.btnEntrar.UseVisualStyleBackColor = true;
-            // 
-            // TelaPrincipal
-            // 
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(411, 277);
-            this.Controls.Add(this.btnEntrar);
-            this.Controls.Add(this.txtSenhaUsuario);
-            this.Controls.Add(this.lblSenhaUsuario);
-            this.Controls.Add(this.txtLoginUsuario);
-            this.Controls.Add(this.lblLogin);
-            this.DoubleBuffered = true;
-            this.Name = "TelaPrincipal";
-            this.Opacity = 0.5D;
-            this.Text = "Consulta";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            this.lblNomeUsuarioLogado.Text = "Bem-vindo(a): " + this.UsuarioLogado.NomeCompletoUsuario;
+            //this.PanelPrincipal.BackColor = Color.FromArgb(25, Color.Green);
+        }
+
+        /// <summary>
+        /// Evento de quando o mouse esta sobre o evento e é pressionado
+        /// Permite que o form seja arrastado mesmo sem a borda padrão do windows
+        /// Referência: https://social.msdn.microsoft.com/Forums/pt-BR/5465b4bc-5433-45ae-9689-4fdc30d2ba8b/como-arrastar-uma-form-sem-bordas?forum=vsvbasicpt 
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        /// <summary>
+        /// Evento de click do botão btnFechar
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        /// <summary>
+        /// Evento de click do botão btnMaximizar
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            // Verifica se o form esta no tamanho normal // 
+            if (WindowState == FormWindowState.Normal)
+            {
+                // caso esteja no tamanho normal, maximiza o form
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                // Caso contrário, coloca como tamanho normal
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        /// <summary>
+        /// Evento de click do botão btnMinimizar
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            // Minimiza o form //
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        /// <summary>
+        /// Evento do timer 
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            this.lblTimer.Text = DateTime.Now.ToLongTimeString() + " - " + DateTime.Now.ToShortDateString();
 
         }
+
+        #endregion ... Eventos ...
     }
 }

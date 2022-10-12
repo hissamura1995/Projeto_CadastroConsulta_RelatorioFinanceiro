@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,7 +17,19 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaPrincipal());
+
+            // Tela de login //
+            TelaLogin _telaLogin = new TelaLogin();
+            Application.Run(_telaLogin);
+
+            // Verifica se o usuário foi autenticado, caso sim, abre a tela principal do usuário //
+            if (_telaLogin.AutenticadoComSucesso)
+            {
+                TelaPrincipal _telaPrincipal = new TelaPrincipal();
+                _telaPrincipal.UsuarioLogado = _telaLogin.UsuarioLogado;
+                Application.Run(_telaPrincipal);
+
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using System;
 namespace Projeto_CadastroConsulta_RelatorioFinanceiro.Business.Model
 {
     [Serializable]
-    public class ClienteModel
+    public class UsuarioModel
     {
         /// <summary>
         /// Armazena IdUsuario
@@ -29,7 +29,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro.Business.Model
         /// <summary>
         /// Armazena CPFUsuario
         /// </summary>
-        public int CPFUusuario { get; set; }
+        public string CPFUusuario { get; set; }
 
         /// <summary>
         /// Armazena DddUsuario
@@ -71,5 +71,14 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro.Business.Model
         /// </summary>
         public string EstadoCivilUsuario { get; set; }
 
+        /// <summary>
+        /// Armazena StatusUsuario
+        /// </summary>
+        public string StatusUsuario { get; set; }
+
+        /// <summary>
+        /// Armazena Bloqueado
+        /// </summary>
+        public bool Bloqueado { get; set; }
     }
 }
