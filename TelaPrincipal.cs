@@ -1,12 +1,16 @@
-﻿using Projeto_CadastroConsulta_RelatorioFinanceiro.Business.Model;
+﻿using Microsoft.Azure.Management.Sql;
+using Projeto_CadastroConsulta_RelatorioFinanceiro.Business.Model;
+using Projeto_CadastroConsulta_RelatorioFinanceiro.Form_Menu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -36,8 +40,66 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
 
         #endregion ... Propriedades ...
 
+        /// <summary>
+        /// Armazena o form aberto atualmente 
+        /// </summary>
+        private Form formFilhoAtual;
+
+        private Button botaoAtual;
+
 
         #region ... Métodos Privados ...
+
+        /// <summary>
+        /// Abre o form conforme click no botão de menu
+        /// </summary>
+        /// <param name="formFilho"></param>
+        private void AbrirFormFilho(Form formFilho)
+        {
+            if (formFilhoAtual != null)
+            {
+                // fecha o form tual // 
+                formFilhoAtual.Close();
+            }
+            formFilhoAtual = formFilho;
+            formFilho.TopLevel = false;
+            formFilho.FormBorderStyle = FormBorderStyle.None;
+            formFilho.Dock = DockStyle.Fill;
+            PanelCentral.Controls.Add(formFilho);
+            PanelCentral.Tag = formFilho;
+            formFilho.BringToFront();
+            formFilho.Show();
+            lblTitulo.Text = formFilho.Text;
+        }
+
+        /// <summary>
+        /// Troca o título para o padrão de início 
+        /// </summary>
+        private void Reset()
+        {
+            this.desabilitarSelecao();
+            lblTitulo.Text = "Início";
+        }
+
+        private void botaoSelecionado(object botao, Color cor)
+        {
+            if (botao != null)
+            {
+                this.desabilitarSelecao();
+                this.botaoAtual = (Button)botao;
+
+                botaoAtual.BackColor = Color.FromArgb(92, 92, 112);
+            }
+        }
+
+
+        private void desabilitarSelecao()
+        {
+            if (this.botaoAtual != null)
+            {
+                this.botaoAtual.BackColor = Color.FromArgb(51, 51, 76);
+            }
+        }
 
 
         #endregion ... Métodos Privados ...
@@ -59,7 +121,18 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
         /// <param name="e">Argumentos do evento</param>
         public void TelaPrincipal_Load(object sender, EventArgs e)
         {
+            // Apresenta o nome do usuário logado e a data/hora atual //
             this.lblNomeUsuarioLogado.Text = "Bem-vindo(a): " + this.UsuarioLogado.NomeCompletoUsuario;
+
+            // ToolTip para os botões de fechar, minimizar e expandir o form //
+            ToolTip toolTip = new ToolTip();
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 100;
+            toolTip.ReshowDelay = 500;
+
+            toolTip.SetToolTip(this.btnFechar, "Fechar");
+            toolTip.SetToolTip(this.btnMaximizar, "Maximizar");
+            toolTip.SetToolTip(this.btnMinimizar, "Minimizar");
             //this.PanelPrincipal.BackColor = Color.FromArgb(25, Color.Green);
         }
 
@@ -83,7 +156,29 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
         /// <param name="e">Argumentos do evento</param>
         private void btnFechar_Click(object sender, EventArgs e)
         {
+
             Application.Exit();
+        }
+
+        /// <summary>
+        ///  Evento de MouseHover do btnFechar
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void btnFechar_MouseHover(object sender, EventArgs e)
+        {
+
+            this.btnFechar.ForeColor = Color.Red;
+        }
+
+        /// <summary>
+        ///  Evento de MouseHover Leave do btnFechar
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void btnFechar_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnFechar.ForeColor = Color.White;
         }
 
         /// <summary>
@@ -128,6 +223,35 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
 
         }
 
+        /// <summary>
+        /// Evento de click do botão btnAgendamentos
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void btnAgendamentos_Click(object sender, EventArgs e)
+        {
+            this.botaoSelecionado(sender, Color.FromArgb(92, 92, 112));
+            this.AbrirFormFilho(new FormAgendamentos());
+        }
+
+        /// <summary>
+        /// Evento de click do botão btnLogo
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void btnLogo_Click(object sender, EventArgs e)
+        {
+            if (formFilhoAtual != null)
+            {
+                formFilhoAtual.Close();
+            }
+            this.Reset();
+        }
+
         #endregion ... Eventos ...
+
+
     }
 }
+
+

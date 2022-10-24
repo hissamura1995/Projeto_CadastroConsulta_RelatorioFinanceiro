@@ -53,6 +53,12 @@
     <Compile Include="Business\BLL\UsuarioBLL.cs" />
     <Compile Include="Business\DAO\UsuarioDAO.cs" />
     <Compile Include="Business\Model\UsuarioModel.cs" />
+    <Compile Include="Form_Menu\FormAgendamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Menu\FormAgendamentos.Designer.cs">
+      <DependentUpon>FormAgendamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,6 +75,9 @@
     <Compile Include="TelaPrincipal.Designer.cs">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form_Menu\FormAgendamentos.resx">
+      <DependentUpon>FormAgendamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>

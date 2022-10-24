@@ -37,18 +37,21 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnAgendamentos = new System.Windows.Forms.Button();
-            this.btnInicio = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.btnLogo = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.PanelCentral = new System.Windows.Forms.Panel();
             this.lblNomeUsuarioLogado = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
-            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panelMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
             this.panelTitulo.SuspendLayout();
+            this.PanelCentral.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -58,7 +61,6 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.panelMenu.Controls.Add(this.button4);
             this.panelMenu.Controls.Add(this.button3);
             this.panelMenu.Controls.Add(this.btnAgendamentos);
-            this.panelMenu.Controls.Add(this.btnInicio);
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
@@ -76,7 +78,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.button5.ForeColor = System.Drawing.Color.Gainsboro;
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 452);
+            this.button5.Location = new System.Drawing.Point(0, 359);
             this.button5.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -96,7 +98,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.button4.ForeColor = System.Drawing.Color.Gainsboro;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(0, 359);
+            this.button4.Location = new System.Drawing.Point(0, 266);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -116,7 +118,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.button3.ForeColor = System.Drawing.Color.Gainsboro;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 266);
+            this.button3.Location = new System.Drawing.Point(0, 173);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -136,7 +138,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.btnAgendamentos.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnAgendamentos.Image = global::Projeto_CadastroConsulta_RelatorioFinanceiro.Properties.Resources.calendario;
             this.btnAgendamentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgendamentos.Location = new System.Drawing.Point(0, 173);
+            this.btnAgendamentos.Location = new System.Drawing.Point(0, 80);
             this.btnAgendamentos.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnAgendamentos.Name = "btnAgendamentos";
             this.btnAgendamentos.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
@@ -146,36 +148,36 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.btnAgendamentos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAgendamentos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgendamentos.UseVisualStyleBackColor = true;
-            // 
-            // btnInicio
-            // 
-            this.btnInicio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnInicio.FlatAppearance.BorderSize = 0;
-            this.btnInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
-            this.btnInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInicio.Location = new System.Drawing.Point(0, 80);
-            this.btnInicio.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btnInicio.Size = new System.Drawing.Size(218, 93);
-            this.btnInicio.TabIndex = 1;
-            this.btnInicio.Text = "    Início";
-            this.btnInicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnInicio.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnInicio.UseVisualStyleBackColor = true;
+            this.btnAgendamentos.Click += new System.EventHandler(this.btnAgendamentos_Click);
             // 
             // panelLogo
             // 
             this.panelLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelLogo.Controls.Add(this.btnLogo);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(218, 80);
             this.panelLogo.TabIndex = 0;
+            // 
+            // btnLogo
+            // 
+            this.btnLogo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnLogo.FlatAppearance.BorderSize = 0;
+            this.btnLogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogo.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnLogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogo.Location = new System.Drawing.Point(0, 0);
+            this.btnLogo.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLogo.Name = "btnLogo";
+            this.btnLogo.Size = new System.Drawing.Size(218, 80);
+            this.btnLogo.TabIndex = 3;
+            this.btnLogo.Text = "Logo";
+            this.btnLogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLogo.UseVisualStyleBackColor = true;
+            this.btnLogo.Click += new System.EventHandler(this.btnLogo_Click);
             // 
             // panelTitulo
             // 
@@ -242,28 +244,47 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.btnFechar.Text = "O";
             this.btnFechar.UseVisualStyleBackColor = false;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            this.btnFechar.MouseLeave += new System.EventHandler(this.btnFechar_MouseLeave);
+            this.btnFechar.MouseHover += new System.EventHandler(this.btnFechar_MouseHover);
             // 
             // lblTitulo
             // 
+            this.lblTitulo.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(348, 26);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(323, 26);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(63, 26);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Início";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // timer
+            // 
+            this.timer.Enabled = true;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // PanelCentral
+            // 
+            this.PanelCentral.Controls.Add(this.lblNomeUsuarioLogado);
+            this.PanelCentral.Controls.Add(this.lblTimer);
+            this.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelCentral.Location = new System.Drawing.Point(218, 80);
+            this.PanelCentral.Name = "PanelCentral";
+            this.PanelCentral.Size = new System.Drawing.Size(758, 468);
+            this.PanelCentral.TabIndex = 4;
             // 
             // lblNomeUsuarioLogado
             // 
             this.lblNomeUsuarioLogado.AutoSize = true;
             this.lblNomeUsuarioLogado.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblNomeUsuarioLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNomeUsuarioLogado.Location = new System.Drawing.Point(218, 80);
+            this.lblNomeUsuarioLogado.Location = new System.Drawing.Point(0, 0);
             this.lblNomeUsuarioLogado.Name = "lblNomeUsuarioLogado";
             this.lblNomeUsuarioLogado.Size = new System.Drawing.Size(138, 17);
-            this.lblNomeUsuarioLogado.TabIndex = 2;
+            this.lblNomeUsuarioLogado.TabIndex = 7;
             this.lblNomeUsuarioLogado.Text = "Bem-vindo: [usuario]";
             // 
             // lblTimer
@@ -271,24 +292,18 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.lblTimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTimer.AutoSize = true;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimer.Location = new System.Drawing.Point(827, 80);
+            this.lblTimer.Location = new System.Drawing.Point(608, 2);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(44, 17);
             this.lblTimer.TabIndex = 3;
             this.lblTimer.Text = "Timer";
-            // 
-            // timer
-            // 
-            this.timer.Enabled = true;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // TelaPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(976, 548);
-            this.Controls.Add(this.lblTimer);
-            this.Controls.Add(this.lblNomeUsuarioLogado);
+            this.Controls.Add(this.PanelCentral);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -298,10 +313,12 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.Text = "6";
             this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.panelMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
+            this.PanelCentral.ResumeLayout(false);
+            this.PanelCentral.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -309,7 +326,6 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
 
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
-        private System.Windows.Forms.Button btnInicio;
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button button5;
@@ -319,8 +335,11 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
         private Button btnFechar;
         private Button btnMinimizar;
         private Button btnMaximizar;
-        private Label lblNomeUsuarioLogado;
-        private Label lblTimer;
         private Timer timer;
+        private Panel PanelCentral;
+        private Label lblTimer;
+        private Label lblNomeUsuarioLogado;
+        private Button btnLogo;
     }
 }
+
