@@ -235,6 +235,17 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
         }
 
         /// <summary>
+        /// Evento de click do botão btnPacientes
+        /// </summary>
+        /// <param name="sender">Origem do evento</param>
+        /// <param name="e">Argumentos do evento</param>
+        private void btnPacientes_Click(object sender, EventArgs e)
+        {
+            this.botaoSelecionado(sender, Color.FromArgb(92, 92, 112));
+            this.AbrirFormFilho(new FormAgendamentos());
+        }
+
+        /// <summary>
         /// Evento de click do botão btnLogo
         /// </summary>
         /// <param name="sender">Origem do evento</param>

@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Imagens\boneco.png" />
     <Content Include="Imagens\calendarDarkIcon.png" />
     <Content Include="Imagens\calendario.png" />
     <Content Include="Imagens\casa.png" />

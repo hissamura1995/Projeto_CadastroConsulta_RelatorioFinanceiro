@@ -116,7 +116,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
+            this.button3.Image = global::Projeto_CadastroConsulta_RelatorioFinanceiro.Properties.Resources.boneco;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(0, 173);
             this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
@@ -124,7 +124,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.button3.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(218, 93);
             this.button3.TabIndex = 3;
-            this.button3.Text = "    Início";
+            this.button3.Text = "    Pacientes";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = true;
@@ -190,7 +190,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.panelTitulo.Location = new System.Drawing.Point(218, 0);
             this.panelTitulo.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(758, 80);
+            this.panelTitulo.Size = new System.Drawing.Size(1021, 80);
             this.panelTitulo.TabIndex = 1;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -202,7 +202,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.White;
-            this.btnMinimizar.Location = new System.Drawing.Point(650, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(913, 2);
             this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(30, 28);
@@ -219,7 +219,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMaximizar.ForeColor = System.Drawing.Color.White;
-            this.btnMaximizar.Location = new System.Drawing.Point(688, 2);
+            this.btnMaximizar.Location = new System.Drawing.Point(951, 2);
             this.btnMaximizar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(30, 28);
@@ -236,7 +236,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFechar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFechar.ForeColor = System.Drawing.Color.White;
-            this.btnFechar.Location = new System.Drawing.Point(726, 2);
+            this.btnFechar.Location = new System.Drawing.Point(989, 2);
             this.btnFechar.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnFechar.Name = "btnFechar";
             this.btnFechar.Size = new System.Drawing.Size(30, 28);
@@ -253,7 +253,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.lblTitulo.AutoSize = true;
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(323, 26);
+            this.lblTitulo.Location = new System.Drawing.Point(453, 24);
             this.lblTitulo.Margin = new System.Windows.Forms.Padding(0);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(63, 26);
@@ -273,7 +273,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.PanelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelCentral.Location = new System.Drawing.Point(218, 80);
             this.PanelCentral.Name = "PanelCentral";
-            this.PanelCentral.Size = new System.Drawing.Size(758, 468);
+            this.PanelCentral.Size = new System.Drawing.Size(1021, 468);
             this.PanelCentral.TabIndex = 4;
             // 
             // lblNomeUsuarioLogado
@@ -292,7 +292,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             this.lblTimer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTimer.AutoSize = true;
             this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTimer.Location = new System.Drawing.Point(608, 2);
+            this.lblTimer.Location = new System.Drawing.Point(871, 2);
             this.lblTimer.Name = "lblTimer";
             this.lblTimer.Size = new System.Drawing.Size(44, 17);
             this.lblTimer.TabIndex = 3;
@@ -302,7 +302,7 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(976, 548);
+            this.ClientSize = new System.Drawing.Size(1239, 548);
             this.Controls.Add(this.PanelCentral);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.panelMenu);

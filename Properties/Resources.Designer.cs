@@ -63,6 +63,16 @@ namespace Projeto_CadastroConsulta_RelatorioFinanceiro.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap boneco {
+            get {
+                object obj = ResourceManager.GetObject("boneco", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap calendarDarkIcon {
             get {
                 object obj = ResourceManager.GetObject("calendarDarkIcon", resourceCulture);
